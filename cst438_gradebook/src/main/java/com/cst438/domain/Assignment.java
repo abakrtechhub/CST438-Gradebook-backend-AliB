@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
+
 public class Assignment {
 	
 	@Id
@@ -26,7 +27,7 @@ public class Assignment {
 	private List<AssignmentGrade> assignmentGrades;
 	
 	private String name;
-	private Date dueDate;
+	private String dueDate;
 	private int needsGrading;  // 0 = false,  1= true (past due date and not all students have grades)
 	
 	public int getId() {
@@ -41,10 +42,10 @@ public class Assignment {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getDueDate() {
+	public String getDueDate() {
 		return dueDate;
 	}
-	public void setDueDate(Date dueDate) {
+	public void setDueDate(String dueDate) {
 		this.dueDate = dueDate;
 	}
 	public int getNeedsGrading() {
