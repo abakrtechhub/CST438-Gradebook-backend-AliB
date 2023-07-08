@@ -1,5 +1,6 @@
 package com.cst438.domain;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 /*
@@ -13,6 +14,8 @@ public class AssignmentListDTO {
 		public String dueDate;
 		public String courseTitle;
 		public int courseId;
+		
+		public AssignmentDTO() {}
 
 		public AssignmentDTO(int assignmentId, int courseId, String assignmentName, String dueDate,
 				String courseTitle) {
@@ -23,6 +26,7 @@ public class AssignmentListDTO {
 			this.courseTitle = courseTitle;
 		}
 
+	
 		@Override
 		public String toString() {
 			return "[assignmentId=" + assignmentId + ", assignmentName=" + assignmentName + ", dueDate="
@@ -64,8 +68,11 @@ public class AssignmentListDTO {
 		
 		
 	}
+	
+	
 
 	public ArrayList<AssignmentDTO> assignments = new ArrayList<>();
+	
 
 	@Override
 	public String toString() {
