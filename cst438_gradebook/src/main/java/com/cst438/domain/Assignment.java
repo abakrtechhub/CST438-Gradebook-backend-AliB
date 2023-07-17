@@ -27,7 +27,7 @@ public class Assignment {
 	private List<AssignmentGrade> assignmentGrades;
 	
 	private String name;
-	private String dueDate;
+	private Date dueDate;
 	private int needsGrading;  // 0 = false,  1= true (past due date and not all students have grades)
 	
 	public int getId() {
@@ -42,11 +42,11 @@ public class Assignment {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDueDate() {
+	public Date getDueDate() {
 		return dueDate;
 	}
-	public void setDueDate(String dueDate) {
-		this.dueDate = dueDate;
+	public void setDueDate(Date date) {
+		this.dueDate = date;
 	}
 	public int getNeedsGrading() {
 		return needsGrading;

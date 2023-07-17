@@ -1,5 +1,7 @@
 package com.cst438.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,9 +33,24 @@ public class EnrollmentController {
 	@Transactional
 	public EnrollmentDTO addEnrollment(@RequestBody EnrollmentDTO enrollmentDTO) {
 		
-		//TODO  complete this method in homework 4
 		
-		return null;
+		Enrollment e = new Enrollment();
+		
+		Course c = courseRepository.findById(enrollmentDTO.course_id).orElse(null);
+		e.setStudentEmail(enrollmentDTO.studentEmail);
+		e.setStudentName(enrollmentDTO.studentName);
+		
+		if (c == null) {
+			
+			throw new ResponseStatusException( HttpStatus.BAD_REQUEST, "Course ID not Found"); 
+		}
+		e.setCourse(c);
+		enrollmentDTO.id = e.getId();
+		enrollmentRepository.save(e);
+		
+		
+		
+		return enrollmentDTO;
 		
 	}
 

@@ -11,13 +11,13 @@ public class AssignmentListDTO {
 	public static class AssignmentDTO {
 		public int assignmentId;
 		public String assignmentName;
-		public String dueDate;
+		public Date dueDate;
 		public String courseTitle;
 		public int courseId;
 		
 		public AssignmentDTO() {}
 
-		public AssignmentDTO(int assignmentId, int courseId, String assignmentName, String dueDate,
+		public AssignmentDTO(int assignmentId, int courseId, String assignmentName, Date dueDate,
 				String courseTitle) {
 			this.assignmentId = assignmentId;
 			this.courseId = courseId;
