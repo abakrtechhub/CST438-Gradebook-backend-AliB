@@ -22,7 +22,8 @@ public class RegistrationServiceREST extends RegistrationService {
 		
 		CourseDTOG course = courseDTO;
 		course.course_id = course_id;
-		
-		System.out.println("Course list: " + course);
+		restTemplate.put(registration_url+"/course/"+course_id, courseDTO);
+		System.out.println(registration_url+"/course/"+course_id);
+		System.out.println("Course list: " + courseDTO);
 	}
 }
